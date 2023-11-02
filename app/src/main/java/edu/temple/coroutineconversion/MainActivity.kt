@@ -35,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.revealButton).setOnClickListener {
             scope.launch {
                 repeat(100){
-                    withContext(Dispatchers.Default){
-                        handler.sendEmptyMessage(it)
-                    }
+                    handler.sendEmptyMessage(it)
                     delay(40)
                 }
             }
